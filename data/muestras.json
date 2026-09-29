@@ -1,0 +1,790 @@
+{
+  "1082288": {
+    "pendiente": "archivar",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-08-21"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-08-28"
+      },
+      {
+        "accion": "Corte estándar",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE estándar 1, 8, 15",
+        "fecha": null
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-08-28",
+        "detalle": "archivar"
+      }
+    ]
+  },
+  "4874": {
+    "pendiente": "corte_estandar",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-08-28"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-02",
+        "detalle": "corte_estandar"
+      }
+    ]
+  },
+  "1082292": {
+    "pendiente": "corte_estrella",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "Bloque casi agotado. Corte estrella indicado; fecha de esa indicación no confirmada.",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-08-28"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Corte estándar",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE estándar 1, 8, 15",
+        "fecha": null
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": null,
+        "detalle": "corte_estrella"
+      }
+    ]
+  },
+  "1082297": {
+    "pendiente": "corte_estandar",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-08-28"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-02",
+        "detalle": "corte_estandar"
+      }
+    ]
+  },
+  "909700": {
+    "pendiente": "desgaste",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "Indicación SA: desgaste de 200 µm.",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-08-28"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-02",
+        "detalle": "desgaste"
+      }
+    ]
+  },
+  "82293": {
+    "pendiente": "corte_estandar",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-08-28"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-02",
+        "detalle": "corte_estandar"
+      }
+    ]
+  },
+  "1082?3801": {
+    "pendiente": "corte_estrella",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "Confirmar identificador.",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "corte_estrella"
+      }
+    ]
+  },
+  "1082301": {
+    "pendiente": "corte_estrella",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "corte_estrella"
+      }
+    ]
+  },
+  "1082": {
+    "pendiente": "corte_estrella",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "corte_estrella"
+      }
+    ]
+  },
+  "1062219": {
+    "pendiente": "corte_estrella",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "corte_estrella"
+      }
+    ]
+  },
+  "182281": {
+    "pendiente": "he_corazon",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "Pendiente HE corazón. El corte corazón previo no está documentado explícitamente.",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "he_corazon"
+      }
+    ]
+  },
+  "217": {
+    "pendiente": "desgaste",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "Indicación SA: desgaste de 200 µm.",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "desgaste"
+      }
+    ]
+  },
+  "22": {
+    "pendiente": "corte_corazon",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "corte_corazon"
+      }
+    ]
+  },
+  "10880": {
+    "pendiente": "desgaste",
+    "prioridad": false,
+    "desgaste_obligatorio": false,
+    "bloque": "En laboratorio",
+    "placas": "Sin confirmar",
+    "nota": "Indicación SA: desgaste de 200 µm.",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-02"
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Reinclusión",
+        "fecha": null
+      },
+      {
+        "accion": "Desgaste",
+        "fecha": null
+      },
+      {
+        "accion": "Corte de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Tinción HE de evaluación",
+        "fecha": null
+      },
+      {
+        "accion": "Revisión SA",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": "2026-09-25",
+        "detalle": "desgaste"
+      }
+    ]
+  },
+  "1082291": {
+    "pendiente": "reincluir",
+    "prioridad": false,
+    "desgaste_obligatorio": true,
+    "bloque": "En laboratorio",
+    "placas": "No hay placas en laboratorio",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": null,
+        "detalle": "reincluir"
+      }
+    ]
+  },
+  "082104": {
+    "pendiente": "reincluir",
+    "prioridad": false,
+    "desgaste_obligatorio": true,
+    "bloque": "En laboratorio",
+    "placas": "No hay placas en laboratorio",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": null,
+        "detalle": "reincluir"
+      }
+    ]
+  },
+  "1082314": {
+    "pendiente": "reincluir",
+    "prioridad": true,
+    "desgaste_obligatorio": true,
+    "bloque": "En laboratorio",
+    "placas": "No hay placas en laboratorio",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": null,
+        "detalle": "reincluir"
+      }
+    ]
+  },
+  "721093": {
+    "pendiente": "reincluir",
+    "prioridad": false,
+    "desgaste_obligatorio": true,
+    "bloque": "En laboratorio",
+    "placas": "No hay placas en laboratorio",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": null,
+        "detalle": "reincluir"
+      }
+    ]
+  },
+  "1082113": {
+    "pendiente": "reincluir",
+    "prioridad": false,
+    "desgaste_obligatorio": true,
+    "bloque": "En laboratorio",
+    "placas": "No hay placas en laboratorio",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": null,
+        "detalle": "reincluir"
+      }
+    ]
+  },
+  "1082101": {
+    "pendiente": "reincluir",
+    "prioridad": false,
+    "desgaste_obligatorio": true,
+    "bloque": "En laboratorio",
+    "placas": "No hay placas en laboratorio",
+    "nota": "",
+    "historial": [
+      {
+        "accion": "Recepción",
+        "fecha": "2026-09-25"
+      },
+      {
+        "accion": "Plan inicial importado",
+        "fecha": null,
+        "detalle": "reincluir"
+      }
+    ]
+  }
+}
