@@ -14,7 +14,7 @@ salida = Path("docs")
 salida.mkdir(exist_ok=True)
 
 # Pega aquí el enlace de respuesta del formulario cuando lo crees.
-FORMULARIO = ""
+FORMULARIO = "https://docs.google.com/forms/d/e/1FAIpQLSeoyFcBhHTaBb1uFyI7mweF1ukKjRBWFNC8a-HPCEJCb9bBPg/viewform"
 
 ahora = datetime.now(ZoneInfo("America/Santiago")).isoformat(
     timespec="minutes"

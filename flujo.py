@@ -12,7 +12,7 @@ ETAPAS = {
     "he_estrella": ("Teñir HE estrella: 5, 21", "archivar"),
 
     "corte_corazon": ("Cortar set corazón", "he_corazon"),
-    "he_corazon": ("Teñir HE corazón", "archivar"),
+    "he_corazon": ("Teñir HE corazón: 5, 21, 39", "archivar"),
 
     "archivar": ("Archivar / cerrar trabajo", "archivada"),
     "archivada": ("Archivada", None),
@@ -29,7 +29,7 @@ DECISIONES = {
 }
 
 # Completar cuando confirmes la numeración.
-HE_CORAZON = []
+HE_CORAZON = [5, 21, 39]
 
 
 def titulo(etapa):
