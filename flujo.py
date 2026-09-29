@@ -54,7 +54,11 @@ def avance(muestra):
     cadena = [titulo(etapa)]
 
     for _ in range(2):
-        etapa = ETAPAS[etapa][1]
+        etapa = (
+            "desgaste"
+            if etapa == "reincluir" and muestra.get("desgaste_obligatorio")
+            else ETAPAS[etapa][1]
+        )
         if etapa is None:
             break
         cadena.append(titulo(etapa))

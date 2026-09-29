@@ -120,25 +120,51 @@ li {
 }
 
 .accion-pendiente {
+  position: relative;
   display: inline-block;
+  max-width: 100%;
   padding: 10px 14px;
   border-radius: 10px;
-  background: #d9f2e9;
-  color: #125744;
-  border: 1px solid #a9dac8;
+  background: var(--fondo, #edf0f2);
+  color: var(--tinta, #52616b);
+  border: 1px solid currentColor;
   font-size: 18px;
   font-weight: 750;
   line-height: 1.3;
+  cursor: help;
 }
 
-article[data-archivada="true"] .accion-pendiente {
-  background: #edf0f2;
-  color: #52616b;
-  border-color: #d6dde1;
+.ayuda-accion {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  width: 260px;
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #24343d;
+  color: white;
+  box-shadow: 0 6px 20px #00000026;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
 }
+
+.accion-pendiente:hover .ayuda-accion,
+.accion-pendiente:focus .ayuda-accion {
+  display: block;
+}
+
+.accion-pendiente:focus-visible {
+  outline: 3px solid #25343b;
+  outline-offset: 3px;
+}
+
 </style>
 <h1>Seguimiento histológico</h1>
-<p>Vista de consulta. Última publicación: 2026-09-29T16:47-03:00</p>
+<p>Vista de consulta. Última publicación: 2026-09-29T16:50-03:00</p>
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeoyFcBhHTaBb1uFyI7mweF1ukKjRBWFNC8a-HPCEJCb9bBPg/viewform">Enviar consulta u observación</a></p>
 <input id="buscar" placeholder="Buscar muestra" oninput="filtrar()">
 <select id="vista" onchange="filtrar()">
@@ -151,9 +177,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>★ 1082314</h2>
-    <span class="accion-pendiente">Reincluir</span>
-    </header>      <p>Reincluir → Desgaste o corte directo de evaluación</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #f3e8ff; --tinta: #6b21a8;"
+        tabindex="0"
+        aria-label="Reincluir. Después: Desgastar → Cortar HE de evaluación"
+    >
+        Reincluir
+        <span class="ayuda-accion">Después: Desgastar → Cortar HE de evaluación</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li></ol></details>
     </article>
@@ -161,9 +194,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>082104</h2>
-    <span class="accion-pendiente">Reincluir</span>
-    </header>      <p>Reincluir → Desgaste o corte directo de evaluación</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #f3e8ff; --tinta: #6b21a8;"
+        tabindex="0"
+        aria-label="Reincluir. Después: Desgastar → Cortar HE de evaluación"
+    >
+        Reincluir
+        <span class="ayuda-accion">Después: Desgastar → Cortar HE de evaluación</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li></ol></details>
     </article>
@@ -171,9 +211,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1062219</h2>
-    <span class="accion-pendiente">Cortar set estrella</span>
-    </header>      <p>Cortar set estrella → Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #e0e7ff; --tinta: #3730a3;"
+        tabindex="0"
+        aria-label="Cortar set estrella. Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo"
+    >
+        Cortar set estrella
+        <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
@@ -181,9 +228,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082</h2>
-    <span class="accion-pendiente">Cortar set estrella</span>
-    </header>      <p>Cortar set estrella → Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #e0e7ff; --tinta: #3730a3;"
+        tabindex="0"
+        aria-label="Cortar set estrella. Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo"
+    >
+        Cortar set estrella
+        <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
@@ -191,9 +245,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082101</h2>
-    <span class="accion-pendiente">Reincluir</span>
-    </header>      <p>Reincluir → Desgaste o corte directo de evaluación</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #f3e8ff; --tinta: #6b21a8;"
+        tabindex="0"
+        aria-label="Reincluir. Después: Desgastar → Cortar HE de evaluación"
+    >
+        Reincluir
+        <span class="ayuda-accion">Después: Desgastar → Cortar HE de evaluación</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li></ol></details>
     </article>
@@ -201,9 +262,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082113</h2>
-    <span class="accion-pendiente">Reincluir</span>
-    </header>      <p>Reincluir → Desgaste o corte directo de evaluación</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #f3e8ff; --tinta: #6b21a8;"
+        tabindex="0"
+        aria-label="Reincluir. Después: Desgastar → Cortar HE de evaluación"
+    >
+        Reincluir
+        <span class="ayuda-accion">Después: Desgastar → Cortar HE de evaluación</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li></ol></details>
     </article>
@@ -211,9 +279,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="true">
     <header class="cabecera-muestra">
     <h2>1082288</h2>
-    <span class="accion-pendiente">Archivada</span>
-    </header>      <p>Archivada</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #edf0f2; --tinta: #52616b;"
+        tabindex="0"
+        aria-label="Archivada. Sin siguiente paso automático."
+    >
+        Archivada
+        <span class="ayuda-accion">Sin siguiente paso automático.</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-21 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-08-28 — Revisión SA: </li><li>Fecha desconocida — Corte estándar: </li><li>Fecha desconocida — Tinción HE estándar 1, 8, 15: </li><li>2026-08-28 — Plan inicial importado: archivar</li><li>2026-09-25 — Archivar / cerrar trabajo: </li></ol></details>
     </article>
@@ -221,9 +296,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082291</h2>
-    <span class="accion-pendiente">Reincluir</span>
-    </header>      <p>Reincluir → Desgaste o corte directo de evaluación</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #f3e8ff; --tinta: #6b21a8;"
+        tabindex="0"
+        aria-label="Reincluir. Después: Desgastar → Cortar HE de evaluación"
+    >
+        Reincluir
+        <span class="ayuda-accion">Después: Desgastar → Cortar HE de evaluación</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li></ol></details>
     </article>
@@ -231,9 +313,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082292</h2>
-    <span class="accion-pendiente">Cortar set estrella</span>
-    </header>      <p>Cortar set estrella → Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</p>
-      <p>Bloque casi agotado. Corte estrella indicado; fecha de esa indicación no confirmada.</p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #e0e7ff; --tinta: #3730a3;"
+        tabindex="0"
+        aria-label="Cortar set estrella. Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo"
+    >
+        Cortar set estrella
+        <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p>Bloque casi agotado. Corte estrella indicado; fecha de esa indicación no confirmada.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>Fecha desconocida — Corte estándar: </li><li>Fecha desconocida — Tinción HE estándar 1, 8, 15: </li><li>Fecha desconocida — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
@@ -241,9 +330,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082297</h2>
-    <span class="accion-pendiente">Cortar set estándar</span>
-    </header>      <p>Cortar set estándar → Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #cffafe; --tinta: #155e75;"
+        tabindex="0"
+        aria-label="Cortar set estándar. Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo"
+    >
+        Cortar set estándar
+        <span class="ayuda-accion">Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: corte_estandar</li></ol></details>
     </article>
@@ -251,9 +347,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082301</h2>
-    <span class="accion-pendiente">Cortar set estrella</span>
-    </header>      <p>Cortar set estrella → Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #e0e7ff; --tinta: #3730a3;"
+        tabindex="0"
+        aria-label="Cortar set estrella. Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo"
+    >
+        Cortar set estrella
+        <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
@@ -261,9 +364,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>1082?3801</h2>
-    <span class="accion-pendiente">Cortar set estrella</span>
-    </header>      <p>Cortar set estrella → Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</p>
-      <p>Confirmar identificador.</p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #e0e7ff; --tinta: #3730a3;"
+        tabindex="0"
+        aria-label="Cortar set estrella. Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo"
+    >
+        Cortar set estrella
+        <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p>Confirmar identificador.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
@@ -271,9 +381,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>10880</h2>
-    <span class="accion-pendiente">Desgastar</span>
-    </header>      <p>Desgastar → Cortar HE de evaluación → Teñir HE de evaluación</p>
-      <p>Indicación SA: desgaste de 200 µm.</p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #ffedd5; --tinta: #9a3412;"
+        tabindex="0"
+        aria-label="Desgastar. Después: Cortar HE de evaluación → Teñir HE de evaluación"
+    >
+        Desgastar
+        <span class="ayuda-accion">Después: Cortar HE de evaluación → Teñir HE de evaluación</span>
+    </span>
+    </header>      <p>Indicación SA: desgaste de 200 µm.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: desgaste</li></ol></details>
     </article>
@@ -281,9 +398,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>182281</h2>
-    <span class="accion-pendiente">Teñir HE corazón: 5, 21, 39</span>
-    </header>      <p>Teñir HE corazón: 5, 21, 39 → Archivar / cerrar trabajo → Archivada</p>
-      <p>Pendiente HE corazón. El corte corazón previo no está documentado explícitamente.</p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #fee2e2; --tinta: #991b1b;"
+        tabindex="0"
+        aria-label="Teñir HE corazón: 5, 21, 39. Después: Archivar / cerrar trabajo → Archivada"
+    >
+        Teñir HE corazón: 5, 21, 39
+        <span class="ayuda-accion">Después: Archivar / cerrar trabajo → Archivada</span>
+    </span>
+    </header>      <p>Pendiente HE corazón. El corte corazón previo no está documentado explícitamente.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: he_corazon</li></ol></details>
     </article>
@@ -291,9 +415,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>217</h2>
-    <span class="accion-pendiente">Desgastar</span>
-    </header>      <p>Desgastar → Cortar HE de evaluación → Teñir HE de evaluación</p>
-      <p>Indicación SA: desgaste de 200 µm.</p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #ffedd5; --tinta: #9a3412;"
+        tabindex="0"
+        aria-label="Desgastar. Después: Cortar HE de evaluación → Teñir HE de evaluación"
+    >
+        Desgastar
+        <span class="ayuda-accion">Después: Cortar HE de evaluación → Teñir HE de evaluación</span>
+    </span>
+    </header>      <p>Indicación SA: desgaste de 200 µm.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: desgaste</li></ol></details>
     </article>
@@ -301,9 +432,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>22</h2>
-    <span class="accion-pendiente">Cortar set corazón</span>
-    </header>      <p>Cortar set corazón → Teñir HE corazón: 5, 21, 39 → Archivar / cerrar trabajo</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #ccfbf1; --tinta: #115e59;"
+        tabindex="0"
+        aria-label="Cortar set corazón. Después: Teñir HE corazón: 5, 21, 39 → Archivar / cerrar trabajo"
+    >
+        Cortar set corazón
+        <span class="ayuda-accion">Después: Teñir HE corazón: 5, 21, 39 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_corazon</li></ol></details>
     </article>
@@ -311,9 +449,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>4874</h2>
-    <span class="accion-pendiente">Cortar set estándar</span>
-    </header>      <p>Cortar set estándar → Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #cffafe; --tinta: #155e75;"
+        tabindex="0"
+        aria-label="Cortar set estándar. Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo"
+    >
+        Cortar set estándar
+        <span class="ayuda-accion">Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: corte_estandar</li></ol></details>
     </article>
@@ -321,9 +466,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>721093</h2>
-    <span class="accion-pendiente">Reincluir</span>
-    </header>      <p>Reincluir → Desgaste o corte directo de evaluación</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #f3e8ff; --tinta: #6b21a8;"
+        tabindex="0"
+        aria-label="Reincluir. Después: Desgastar → Cortar HE de evaluación"
+    >
+        Reincluir
+        <span class="ayuda-accion">Después: Desgastar → Cortar HE de evaluación</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li></ol></details>
     </article>
@@ -331,9 +483,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>82293</h2>
-    <span class="accion-pendiente">Cortar set estándar</span>
-    </header>      <p>Cortar set estándar → Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</p>
-      <p></p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #cffafe; --tinta: #155e75;"
+        tabindex="0"
+        aria-label="Cortar set estándar. Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo"
+    >
+        Cortar set estándar
+        <span class="ayuda-accion">Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</span>
+    </span>
+    </header>      <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: corte_estandar</li></ol></details>
     </article>
@@ -341,9 +500,16 @@ article[data-archivada="true"] .accion-pendiente {
     <article data-archivada="false">
     <header class="cabecera-muestra">
     <h2>909700</h2>
-    <span class="accion-pendiente">Desgastar</span>
-    </header>      <p>Desgastar → Cortar HE de evaluación → Teñir HE de evaluación</p>
-      <p>Indicación SA: desgaste de 200 µm.</p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: #ffedd5; --tinta: #9a3412;"
+        tabindex="0"
+        aria-label="Desgastar. Después: Cortar HE de evaluación → Teñir HE de evaluación"
+    >
+        Desgastar
+        <span class="ayuda-accion">Después: Cortar HE de evaluación → Teñir HE de evaluación</span>
+    </span>
+    </header>      <p>Indicación SA: desgaste de 200 µm.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: desgaste</li></ol></details>
     </article>

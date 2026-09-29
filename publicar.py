@@ -23,6 +23,23 @@ esc = lambda x: html.escape(str(x))
 tarjetas = []
 filas = []
 
+COLORES = {
+    "reincluir":       ("#f3e8ff", "#6b21a8"),
+    "elegir":          ("#ede9fe", "#5b21b6"),
+    "desgaste":        ("#ffedd5", "#9a3412"),
+    "corte_eval":      ("#dbeafe", "#1e40af"),
+    "he_eval":         ("#fce7f3", "#9d174d"),
+    "revision":        ("#fef3c7", "#92400e"),
+    "corte_estandar":  ("#cffafe", "#155e75"),
+    "he_estandar":     ("#ffe4e6", "#9f1239"),
+    "corte_estrella":  ("#e0e7ff", "#3730a3"),
+    "he_estrella":     ("#fae8ff", "#86198f"),
+    "corte_corazon":   ("#ccfbf1", "#115e59"),
+    "he_corazon":      ("#fee2e2", "#991b1b"),
+    "archivar":        ("#dcfce7", "#166534"),
+    "archivada":       ("#edf0f2", "#52616b"),
+}
+
 for ident, m in sorted(
     datos.items(), key=lambda par: (not par[1]["prioridad"], par[0])
 ):
@@ -33,14 +50,31 @@ for ident, m in sorted(
         + ": " + esc(e.get("detalle", "")) + "</li>"
         for e in m["historial"]
     )
+    
+    fondo, tinta = COLORES.get(
+        m["pendiente"], ("#edf0f2", "#52616b")
+    )
+    secuencia = avance(m).split(" → ", 1)
+    despues = (
+        "Después: " + secuencia[1]
+        if len(secuencia) > 1
+        else "Sin siguiente paso automático."
+    )
 
     tarjetas.append(f"""
     <article data-archivada="{str(archivada).lower()}">
     <header class="cabecera-muestra">
     <h2>{'★ ' if m['prioridad'] else ''}{esc(ident)}</h2>
-    <span class="accion-pendiente">{esc(titulo(m['pendiente']))}</span>
-    </header>      <p>{esc(avance(m))}</p>
-      <p>{esc(m['nota'])}</p>
+    <span
+        class="accion-pendiente"
+        style="--fondo: {fondo}; --tinta: {tinta};"
+        tabindex="0"
+        aria-label="{esc(titulo(m['pendiente']))}. {esc(despues)}"
+    >
+        {esc(titulo(m['pendiente']))}
+        <span class="ayuda-accion">{esc(despues)}</span>
+    </span>
+    </header>      <p>{esc(m['nota'])}</p>
       <p>Bloque: {esc(m['bloque'])}<br>Placas: {esc(m['placas'])}</p>
       <details><summary>Historial</summary><ol>{historia}</ol></details>
     </article>
@@ -178,22 +212,48 @@ li {
 }
 
 .accion-pendiente {
+  position: relative;
   display: inline-block;
+  max-width: 100%;
   padding: 10px 14px;
   border-radius: 10px;
-  background: #d9f2e9;
-  color: #125744;
-  border: 1px solid #a9dac8;
+  background: var(--fondo, #edf0f2);
+  color: var(--tinta, #52616b);
+  border: 1px solid currentColor;
   font-size: 18px;
   font-weight: 750;
   line-height: 1.3;
+  cursor: help;
 }
 
-article[data-archivada="true"] .accion-pendiente {
-  background: #edf0f2;
-  color: #52616b;
-  border-color: #d6dde1;
+.ayuda-accion {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  width: 260px;
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #24343d;
+  color: white;
+  box-shadow: 0 6px 20px #00000026;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
 }
+
+.accion-pendiente:hover .ayuda-accion,
+.accion-pendiente:focus .ayuda-accion {
+  display: block;
+}
+
+.accion-pendiente:focus-visible {
+  outline: 3px solid #25343b;
+  outline-offset: 3px;
+}
+
 </style>
 <h1>Seguimiento histológico</h1>
 <p>Vista de consulta. Última publicación: FECHA</p>
