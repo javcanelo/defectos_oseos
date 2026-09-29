@@ -1,6 +1,6 @@
 {
   "1082288": {
-    "pendiente": "archivar",
+    "pendiente": "archivada",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -51,6 +51,12 @@
         "accion": "Plan inicial importado",
         "fecha": "2026-08-28",
         "detalle": "archivar"
+      },
+      {
+        "accion": "Archivar / cerrar trabajo",
+        "fecha": "2026-09-25",
+        "registrado": "2026-09-29T16:42:41.592713-03:00",
+        "detalle": ""
       }
     ]
   },
