@@ -2,15 +2,113 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Seguimiento histológico</title>
 <style>
-body{font:16px system-ui;max-width:1050px;margin:32px auto;padding:0 20px;
-background:#f5f7f8;color:#25343b}
-article{background:white;padding:20px;border:1px solid #dde3e6;
-border-radius:12px;margin:16px 0}
-h2{margin-top:0}input,select{font:inherit;padding:10px;max-width:95%}
-summary{cursor:pointer}li{margin:8px 0}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px system-ui, sans-serif;
+  max-width: 1440px;
+  margin: 32px auto;
+  padding: 0 24px;
+  background: #f3f6f8;
+  color: #25343b;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+input, select {
+  font: inherit;
+  padding: 12px;
+  margin: 0 8px 12px 0;
+  max-width: 100%;
+  border: 1px solid #ccd6dc;
+  border-radius: 8px;
+  background: white;
+}
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+  align-items: start;
+}
+
+article {
+  min-width: 0;
+  background: white;
+  padding: 22px;
+  border: 1px solid #dde5e9;
+  border-top: 4px solid #287c76;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #25343b08;
+  overflow-wrap: anywhere;
+}
+
+article[hidden] {
+  display: none;
+}
+
+article[data-archivada="true"] {
+  border-top-color: #98a5ad;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 23px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  color: #176c66;
+}
+
+summary {
+  cursor: pointer;
+  color: #176c66;
+  font-weight: 600;
+}
+
+details {
+  border-top: 1px solid #edf0f2;
+  padding-top: 14px;
+  margin-top: 18px;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+li {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .tablero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0 14px;
+  }
+
+  .tablero {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 <h1>Seguimiento histológico</h1>
-<p>Vista de consulta. Última publicación: 2026-09-29T16:29-03:00</p>
+<p>Vista de consulta. Última publicación: 2026-09-29T16:33-03:00</p>
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeoyFcBhHTaBb1uFyI7mweF1ukKjRBWFNC8a-HPCEJCb9bBPg/viewform">Enviar consulta u observación</a></p>
 <input id="buscar" placeholder="Buscar muestra" oninput="filtrar()">
 <select id="vista" onchange="filtrar()">
@@ -18,6 +116,7 @@ summary{cursor:pointer}li{margin:8px 0}
 <option value="true">Archivadas</option>
 <option value="todas">Todas</option>
 </select>
+<main class="tablero">
 
     <article data-archivada="false">
       <h2>★ 1082314</h2>
@@ -199,6 +298,7 @@ summary{cursor:pointer}li{margin:8px 0}
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: desgaste</li></ol></details>
     </article>
     
+</main>
 <script>
 function filtrar(){
  const q=document.getElementById('buscar').value.toLowerCase();
