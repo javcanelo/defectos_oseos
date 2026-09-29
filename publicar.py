@@ -36,9 +36,10 @@ for ident, m in sorted(
 
     tarjetas.append(f"""
     <article data-archivada="{str(archivada).lower()}">
-      <h2>{'★ ' if m['prioridad'] else ''}{esc(ident)}</h2>
-      <p><strong>{esc(titulo(m['pendiente']))}</strong></p>
-      <p>{esc(avance(m))}</p>
+    <header class="cabecera-muestra">
+    <h2>{'★ ' if m['prioridad'] else ''}{esc(ident)}</h2>
+    <span class="accion-pendiente">{esc(titulo(m['pendiente']))}</span>
+    </header>      <p>{esc(avance(m))}</p>
       <p>{esc(m['nota'])}</p>
       <p>Bloque: {esc(m['bloque'])}<br>Placas: {esc(m['placas'])}</p>
       <details><summary>Historial</summary><ol>{historia}</ol></details>
@@ -162,6 +163,36 @@ li {
   .tablero {
     grid-template-columns: 1fr;
   }
+}
+.cabecera-muestra {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cabecera-muestra h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.accion-pendiente {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #d9f2e9;
+  color: #125744;
+  border: 1px solid #a9dac8;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+article[data-archivada="true"] .accion-pendiente {
+  background: #edf0f2;
+  color: #52616b;
+  border-color: #d6dde1;
 }
 </style>
 <h1>Seguimiento histológico</h1>
