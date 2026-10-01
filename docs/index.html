@@ -162,19 +162,131 @@ li {
   outline-offset: 3px;
 }
 
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 24px 0 12px;
+}
+
+.filtros label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  color: #52616b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filtros input,
+.filtros select {
+  margin: 0;
+}
+
+.ultimo-trabajo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 16px 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f3f6f8;
+}
+
+.ultimo-titulo {
+  color: #647580;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ultimo-trabajo strong {
+  font-size: 15px;
+}
+
+.ultima-fecha {
+  color: #52616b;
+  font-size: 14px;
+}
+
+article[data-sa="1"] {
+  border: 2px solid #d49a22;
+  border-top: 6px solid #d49a22;
+  background: #fffdf5;
+}
+
+.aviso-sa {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff0bc;
+  color: #704400;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.resultados {
+  color: #52616b;
+  font-size: 14px;
+}
+
 </style>
 <h1>Seguimiento histológico</h1>
-<p>Vista de consulta. Última publicación: 2026-10-01T15:32-03:00</p>
+<p>Vista de consulta. Última publicación: 2026-10-01T16:00-03:00</p>
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeoyFcBhHTaBb1uFyI7mweF1ukKjRBWFNC8a-HPCEJCb9bBPg/viewform">Enviar consulta u observación</a></p>
-<input id="buscar" placeholder="Buscar muestra" oninput="filtrar()">
-<select id="vista" onchange="filtrar()">
-<option value="false">Pendientes</option>
-<option value="true">Archivadas</option>
-<option value="todas">Todas</option>
-</select>
+<div class="filtros">
+  <label>
+    Buscar
+    <input id="buscar" placeholder="ID o texto" oninput="filtrar()">
+  </label>
+
+  <label>
+    Estado
+    <select id="vista" onchange="filtrar()">
+      <option value="false">Pendientes</option>
+      <option value="true">Archivadas</option>
+      <option value="todas">Todas</option>
+    </select>
+  </label>
+
+  <label>
+    Etapa
+    <select id="etapa" onchange="filtrar()">
+      <option value="todas">Todas las etapas</option>
+      <option value="reincluir">Reincluir</option><option value="desgaste">Desgastar</option><option value="elegir">Desgaste o corte directo de evaluación</option><option value="corte_eval">Cortar HE de evaluación</option><option value="he_eval">Teñir HE de evaluación</option><option value="revision">Esperar revisión SA</option><option value="corte_corazon">Cortar set corazón</option><option value="corte_estrella">Cortar set estrella</option><option value="corte_estandar">Cortar set estándar</option><option value="he_corazon">Teñir HE corazón: 5, 21, 39</option><option value="he_estrella">Teñir HE estrella: 5, 21</option><option value="he_estandar">Teñir HE estándar: 1, 8, 15</option><option value="archivar">Archivar / cerrar trabajo</option><option value="archivada">Archivada</option>
+    </select>
+  </label>
+
+  <label>
+    Orden por avance
+    <select id="orden" onchange="filtrar()">
+      <option value="desc">Más avanzadas primero</option>
+      <option value="asc">Etapas iniciales primero</option>
+    </select>
+  </label>
+</div>
+
+<p class="resultados">
+  Las muestras pendientes de revisión SA aparecen primero
+  entre los resultados filtrados.
+</p>
+<p id="conteo" class="resultados" aria-live="polite"></p>
+
 <main class="tablero">
 
-    <article data-archivada="false">
+    <article
+        data-id="1082314"
+        data-etapa="he_eval"
+        data-rango="4"
+        data-prioridad="1"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>★ 1082314</h2>
     <span
@@ -186,12 +298,28 @@ li {
         Teñir HE de evaluación
         <span class="ayuda-accion">Después: Esperar revisión SA</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Cortar HE de evaluación</strong>
+        <span class="ultima-fecha">01/10/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li><li>2026-10-01 — Reincluir: </li><li>2026-10-01 — Desgastar: </li><li>2026-10-01 — Cortar HE de evaluación: </li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="082104"
+        data-etapa="he_eval"
+        data-rango="4"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>082104</h2>
     <span
@@ -203,12 +331,28 @@ li {
         Teñir HE de evaluación
         <span class="ayuda-accion">Después: Esperar revisión SA</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Cortar HE de evaluación</strong>
+        <span class="ultima-fecha">01/10/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li><li>2026-10-01 — Reincluir: </li><li>2026-10-01 — Desgastar: </li><li>2026-10-01 — Cortar HE de evaluación: </li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1062219"
+        data-etapa="corte_estrella"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1062219</h2>
     <span
@@ -220,12 +364,28 @@ li {
         Cortar set estrella
         <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082"
+        data-etapa="corte_estrella"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082</h2>
     <span
@@ -237,12 +397,28 @@ li {
         Cortar set estrella
         <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082101"
+        data-etapa="he_eval"
+        data-rango="4"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082101</h2>
     <span
@@ -254,12 +430,28 @@ li {
         Teñir HE de evaluación
         <span class="ayuda-accion">Después: Esperar revisión SA</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Cortar HE de evaluación</strong>
+        <span class="ultima-fecha">01/10/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li><li>2026-10-01 — Reincluir: </li><li>2026-10-01 — Desgastar: </li><li>2026-10-01 — Cortar HE de evaluación: </li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082113"
+        data-etapa="elegir"
+        data-rango="2"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082113</h2>
     <span
@@ -271,12 +463,28 @@ li {
         Desgaste o corte directo de evaluación
         <span class="ayuda-accion">Sin siguiente paso automático.</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Reincluir</strong>
+        <span class="ultima-fecha">01/10/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li><li>2026-10-01 — Reincluir: </li><li>2026-10-01 — Desgastar: </li><li>2026-10-01 — Cambio de plan: corte_eval → reincluir. Salía solo un defecto a pesar de intentar enderezar</li><li>2026-10-01 — Reincluir: </li></ol></details>
     </article>
     
-    <article data-archivada="true">
+    <article
+        data-id="1082288"
+        data-etapa="archivada"
+        data-rango="9"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="true"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082288</h2>
     <span
@@ -288,12 +496,28 @@ li {
         Archivada
         <span class="ayuda-accion">Sin siguiente paso automático.</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Archivar / cerrar trabajo</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-21 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-08-28 — Revisión SA: </li><li>Fecha desconocida — Corte estándar: </li><li>Fecha desconocida — Tinción HE estándar 1, 8, 15: </li><li>2026-08-28 — Plan inicial importado: archivar</li><li>2026-09-25 — Archivar / cerrar trabajo: </li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082291"
+        data-etapa="he_eval"
+        data-rango="4"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082291</h2>
     <span
@@ -305,12 +529,28 @@ li {
         Teñir HE de evaluación
         <span class="ayuda-accion">Después: Esperar revisión SA</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Cortar HE de evaluación</strong>
+        <span class="ultima-fecha">01/10/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li><li>2026-10-01 — Reincluir: </li><li>2026-10-01 — Desgastar: </li><li>2026-10-01 — Cortar HE de evaluación: </li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082292"
+        data-etapa="corte_estrella"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082292</h2>
     <span
@@ -322,12 +562,28 @@ li {
         Cortar set estrella
         <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p>Bloque casi agotado. Corte estrella indicado; fecha de esa indicación no confirmada.</p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Tinción HE estándar 1, 8, 15</strong>
+        <span class="ultima-fecha">Fecha desconocida</span>
+    </div>
+
+    <p>Bloque casi agotado. Corte estrella indicado; fecha de esa indicación no confirmada.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>Fecha desconocida — Corte estándar: </li><li>Fecha desconocida — Tinción HE estándar 1, 8, 15: </li><li>Fecha desconocida — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082297"
+        data-etapa="corte_estandar"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082297</h2>
     <span
@@ -339,12 +595,28 @@ li {
         Cortar set estándar
         <span class="ayuda-accion">Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">02/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: corte_estandar</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082301"
+        data-etapa="corte_estrella"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082301</h2>
     <span
@@ -356,12 +628,28 @@ li {
         Cortar set estrella
         <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="1082?3801"
+        data-etapa="corte_estrella"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>1082?3801</h2>
     <span
@@ -373,12 +661,28 @@ li {
         Cortar set estrella
         <span class="ayuda-accion">Después: Teñir HE estrella: 5, 21 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p>Confirmar identificador.</p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p>Confirmar identificador.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_estrella</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="10880"
+        data-etapa="desgaste"
+        data-rango="2"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>10880</h2>
     <span
@@ -390,12 +694,28 @@ li {
         Desgastar
         <span class="ayuda-accion">Después: Cortar HE de evaluación → Teñir HE de evaluación</span>
     </span>
-    </header>      <p>Indicación SA: desgaste de 200 µm.</p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p>Indicación SA: desgaste de 200 µm.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: desgaste</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="182281"
+        data-etapa="he_corazon"
+        data-rango="7"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>182281</h2>
     <span
@@ -407,12 +727,28 @@ li {
         Teñir HE corazón: 5, 21, 39
         <span class="ayuda-accion">Después: Archivar / cerrar trabajo → Archivada</span>
     </span>
-    </header>      <p>Pendiente HE corazón. El corte corazón previo no está documentado explícitamente.</p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p>Pendiente HE corazón. El corte corazón previo no está documentado explícitamente.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: he_corazon</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="217"
+        data-etapa="desgaste"
+        data-rango="2"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>217</h2>
     <span
@@ -424,12 +760,28 @@ li {
         Desgastar
         <span class="ayuda-accion">Después: Cortar HE de evaluación → Teñir HE de evaluación</span>
     </span>
-    </header>      <p>Indicación SA: desgaste de 200 µm.</p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p>Indicación SA: desgaste de 200 µm.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: desgaste</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="22"
+        data-etapa="corte_corazon"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>22</h2>
     <span
@@ -441,12 +793,28 @@ li {
         Cortar set corazón
         <span class="ayuda-accion">Después: Teñir HE corazón: 5, 21, 39 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">25/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-09-02 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-25 — Revisión SA: </li><li>2026-09-25 — Plan inicial importado: corte_corazon</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="4874"
+        data-etapa="corte_estandar"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>4874</h2>
     <span
@@ -458,12 +826,28 @@ li {
         Cortar set estándar
         <span class="ayuda-accion">Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">02/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: corte_estandar</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="721093"
+        data-etapa="elegir"
+        data-rango="2"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>721093</h2>
     <span
@@ -475,12 +859,28 @@ li {
         Desgaste o corte directo de evaluación
         <span class="ayuda-accion">Sin siguiente paso automático.</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Reincluir</strong>
+        <span class="ultima-fecha">01/10/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: No hay placas en laboratorio</p>
       <details><summary>Historial</summary><ol><li>2026-09-25 — Recepción: </li><li>Fecha desconocida — Plan inicial importado: reincluir</li><li>2026-10-01 — Reincluir: </li><li>2026-10-01 — Desgastar: </li><li>2026-10-01 — Cambio de plan: corte_eval → reincluir. Salía solo un defecto a pesar de intentar enderezar</li><li>2026-10-01 — Reincluir: </li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="82293"
+        data-etapa="corte_estandar"
+        data-rango="6"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>82293</h2>
     <span
@@ -492,12 +892,28 @@ li {
         Cortar set estándar
         <span class="ayuda-accion">Después: Teñir HE estándar: 1, 8, 15 → Archivar / cerrar trabajo</span>
     </span>
-    </header>      <p></p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">02/09/2026</span>
+    </div>
+
+    <p></p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: corte_estandar</li></ol></details>
     </article>
     
-    <article data-archivada="false">
+    <article
+        data-id="909700"
+        data-etapa="desgaste"
+        data-rango="2"
+        data-prioridad="0"
+        data-sa="0"
+        data-archivada="false"
+    >
+        
     <header class="cabecera-muestra">
     <h2>909700</h2>
     <span
@@ -509,20 +925,86 @@ li {
         Desgastar
         <span class="ayuda-accion">Después: Cortar HE de evaluación → Teñir HE de evaluación</span>
     </span>
-    </header>      <p>Indicación SA: desgaste de 200 µm.</p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>Revisión SA</strong>
+        <span class="ultima-fecha">02/09/2026</span>
+    </div>
+
+    <p>Indicación SA: desgaste de 200 µm.</p>
       <p>Bloque: En laboratorio<br>Placas: Sin confirmar</p>
       <details><summary>Historial</summary><ol><li>2026-08-28 — Recepción: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Reinclusión: </li><li>Fecha desconocida — Desgaste: </li><li>Fecha desconocida — Corte de evaluación: </li><li>Fecha desconocida — Tinción HE de evaluación: </li><li>2026-09-02 — Revisión SA: </li><li>2026-09-02 — Plan inicial importado: desgaste</li></ol></details>
     </article>
     
 </main>
 <script>
-function filtrar(){
- const q=document.getElementById('buscar').value.toLowerCase();
- const v=document.getElementById('vista').value;
- document.querySelectorAll('article').forEach(a=>{
-  a.hidden=!(a.textContent.toLowerCase().includes(q)
-    &&(v==='todas'||a.dataset.archivada===v));
- });
+function normalizar(texto) {
+  return texto.normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase();
 }
+
+function filtrar() {
+  const consulta = normalizar(
+    document.getElementById("buscar").value.trim()
+  );
+  const vista = document.getElementById("vista").value;
+  const etapa = document.getElementById("etapa").value;
+  const direccion =
+    document.getElementById("orden").value === "asc" ? 1 : -1;
+
+  const tablero = document.querySelector(".tablero");
+  const tarjetas = Array.from(tablero.querySelectorAll("article"));
+
+  tarjetas.sort((a, b) => {
+    // SA siempre primero, independientemente del sentido del orden.
+    const diferenciaSA = Number(b.dataset.sa) - Number(a.dataset.sa);
+    if (diferenciaSA) return diferenciaSA;
+
+    const diferenciaEtapa =
+      Number(a.dataset.rango) - Number(b.dataset.rango);
+    if (diferenciaEtapa) return direccion * diferenciaEtapa;
+
+    // Dentro de la misma etapa, mantener la prioridad manual.
+    const diferenciaPrioridad =
+      Number(b.dataset.prioridad) - Number(a.dataset.prioridad);
+    if (diferenciaPrioridad) return diferenciaPrioridad;
+
+    return a.dataset.id.localeCompare(
+      b.dataset.id, "es", {numeric: true}
+    );
+  });
+
+  let visibles = 0;
+  let revisiones = 0;
+
+  tarjetas.forEach(tarjeta => {
+    const coincideTexto =
+      normalizar(tarjeta.textContent).includes(consulta);
+    const coincideEstado =
+      vista === "todas" || tarjeta.dataset.archivada === vista;
+    const coincideEtapa =
+      etapa === "todas" || tarjeta.dataset.etapa === etapa;
+
+    tarjeta.hidden = !(
+      coincideTexto && coincideEstado && coincideEtapa
+    );
+
+    if (!tarjeta.hidden) {
+      visibles++;
+      if (tarjeta.dataset.sa === "1") revisiones++;
+    }
+
+    tablero.appendChild(tarjeta);
+  });
+
+  document.getElementById("conteo").textContent =
+    visibles === 0
+      ? "No hay muestras que coincidan con estos filtros."
+      : `${visibles} muestras visibles · ${revisiones} requieren revisión SA`;
+}
+
 filtrar();
 </script></html>
