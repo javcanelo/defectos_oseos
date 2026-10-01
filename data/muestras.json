@@ -699,9 +699,9 @@
     ]
   },
   "082104": {
-    "pendiente": "reincluir",
+    "pendiente": "desgaste",
     "prioridad": false,
-    "desgaste_obligatorio": true,
+    "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
     "placas": "No hay placas en laboratorio",
     "nota": "",
@@ -714,13 +714,19 @@
         "accion": "Plan inicial importado",
         "fecha": null,
         "detalle": "reincluir"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T11:55:01.482758-03:00",
+        "detalle": ""
       }
     ]
   },
   "1082314": {
-    "pendiente": "reincluir",
+    "pendiente": "desgaste",
     "prioridad": true,
-    "desgaste_obligatorio": true,
+    "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
     "placas": "No hay placas en laboratorio",
     "nota": "",
@@ -733,13 +739,19 @@
         "accion": "Plan inicial importado",
         "fecha": null,
         "detalle": "reincluir"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T11:55:24.052462-03:00",
+        "detalle": ""
       }
     ]
   },
   "721093": {
-    "pendiente": "reincluir",
+    "pendiente": "desgaste",
     "prioridad": false,
-    "desgaste_obligatorio": true,
+    "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
     "placas": "No hay placas en laboratorio",
     "nota": "",
@@ -752,13 +764,19 @@
         "accion": "Plan inicial importado",
         "fecha": null,
         "detalle": "reincluir"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T11:55:19.611158-03:00",
+        "detalle": ""
       }
     ]
   },
   "1082113": {
-    "pendiente": "reincluir",
+    "pendiente": "desgaste",
     "prioridad": false,
-    "desgaste_obligatorio": true,
+    "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
     "placas": "No hay placas en laboratorio",
     "nota": "",
@@ -771,13 +789,19 @@
         "accion": "Plan inicial importado",
         "fecha": null,
         "detalle": "reincluir"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T11:55:31.309728-03:00",
+        "detalle": ""
       }
     ]
   },
   "1082101": {
-    "pendiente": "reincluir",
+    "pendiente": "desgaste",
     "prioridad": false,
-    "desgaste_obligatorio": true,
+    "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
     "placas": "No hay placas en laboratorio",
     "nota": "",
@@ -790,6 +814,12 @@
         "accion": "Plan inicial importado",
         "fecha": null,
         "detalle": "reincluir"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T11:55:37.349272-03:00",
+        "detalle": ""
       }
     ]
   }
