@@ -5,7 +5,8 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from flujo import titulo, avance
+import unicodedata
+from flujo import titulo, avance, ETAPAS
 
 datos = json.loads(
     Path("data/muestras.json").read_text(encoding="utf-8")
@@ -40,6 +41,90 @@ COLORES = {
     "archivada":       ("#edf0f2", "#52616b"),
 }
 
+ORDEN_ETAPAS = {
+    "reincluir": 1,
+    "elegir": 2,
+    "desgaste": 2,
+    "corte_eval": 3,
+    "he_eval": 4,
+    "revision": 5,
+    "corte_estandar": 6,
+    "corte_estrella": 6,
+    "corte_corazon": 6,
+    "he_estandar": 7,
+    "he_estrella": 7,
+    "he_corazon": 7,
+    "archivar": 8,
+    "archivada": 9,
+}
+
+
+def normalizar(texto):
+    texto = unicodedata.normalize("NFKD", str(texto))
+    return "".join(
+        c for c in texto if not unicodedata.combining(c)
+    ).casefold().strip()
+
+
+# Acciones reales conocidas, incluyendo los nombres de la carga inicial.
+ACCIONES_TRABAJO = {
+    normalizar(nombre)
+    for clave, (nombre, _) in ETAPAS.items()
+    if clave not in ("elegir", "archivada")
+}
+
+ACCIONES_TRABAJO.update(normalizar(nombre) for nombre in [
+    "Recepción",
+    "Reinclusión",
+    "Desgaste",
+    "Corte de evaluación",
+    "Tinción HE de evaluación",
+    "Revisión SA",
+    "Evaluación SA",
+    "Corte estándar",
+    "Corte estrella",
+    "Corte corazón",
+    "Tinción HE estándar 1, 8, 15",
+    "Derretido y evaluación",
+])
+
+
+def ultimo_trabajo(muestra):
+    # Usa el último trabajo registrado, aunque no tenga fecha.
+    # No sustituye la fecha realizada por la fecha de ingreso al sistema.
+    for evento in reversed(muestra.get("historial", [])):
+        accion = evento.get("accion", "")
+        if normalizar(accion) not in ACCIONES_TRABAJO:
+            continue
+
+        fecha = evento.get("fecha")
+        if not fecha:
+            fecha_visible = "Fecha desconocida"
+        else:
+            try:
+                fecha_visible = datetime.fromisoformat(
+                    str(fecha).replace("Z", "+00:00")
+                ).strftime("%d/%m/%Y")
+            except ValueError:
+                fecha_visible = str(fecha)
+
+        # La aplicación registra la revisión completada con este título.
+        if normalizar(accion) == normalizar("Esperar revisión SA"):
+            accion = "Revisión SA"
+
+        return accion, fecha_visible
+
+    return "Sin trabajo documentado", "Fecha desconocida"
+
+
+opciones_etapas = "".join(
+    f'<option value="{esc(clave)}">{esc(titulo(clave))}</option>'
+    for clave in sorted(
+        ETAPAS,
+        key=lambda clave: (ORDEN_ETAPAS[clave], titulo(clave))
+    )
+)
+
 for ident, m in sorted(
     datos.items(), key=lambda par: (not par[1]["prioridad"], par[0])
 ):
@@ -60,9 +145,24 @@ for ident, m in sorted(
         if len(secuencia) > 1
         else "Sin siguiente paso automático."
     )
+    
+    ultima_accion, ultima_fecha = ultimo_trabajo(m)
+    requiere_sa = m["pendiente"] == "revision"
+    aviso_sa = (
+        '<p class="aviso-sa">Requiere revisión SA · Acercarse a revisar</p>'
+        if requiere_sa else ""
+    )
 
     tarjetas.append(f"""
-    <article data-archivada="{str(archivada).lower()}">
+    <article
+        data-id="{esc(ident)}"
+        data-etapa="{esc(m['pendiente'])}"
+        data-rango="{ORDEN_ETAPAS[m['pendiente']]}"
+        data-prioridad="{int(bool(m['prioridad']))}"
+        data-sa="{int(requiere_sa)}"
+        data-archivada="{str(archivada).lower()}"
+    >
+        {aviso_sa}
     <header class="cabecera-muestra">
     <h2>{'★ ' if m['prioridad'] else ''}{esc(ident)}</h2>
     <span
@@ -74,7 +174,15 @@ for ident, m in sorted(
         {esc(titulo(m['pendiente']))}
         <span class="ayuda-accion">{esc(despues)}</span>
     </span>
-    </header>      <p>{esc(m['nota'])}</p>
+    </header>
+
+    <div class="ultimo-trabajo">
+        <span class="ultimo-titulo">Último trabajo registrado</span>
+        <strong>{esc(ultima_accion)}</strong>
+        <span class="ultima-fecha">{esc(ultima_fecha)}</span>
+    </div>
+
+    <p>{esc(m['nota'])}</p>
       <p>Bloque: {esc(m['bloque'])}<br>Placas: {esc(m['placas'])}</p>
       <details><summary>Historial</summary><ol>{historia}</ol></details>
     </article>
@@ -254,33 +362,196 @@ li {
   outline-offset: 3px;
 }
 
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 24px 0 12px;
+}
+
+.filtros label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  color: #52616b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filtros input,
+.filtros select {
+  margin: 0;
+}
+
+.ultimo-trabajo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 16px 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f3f6f8;
+}
+
+.ultimo-titulo {
+  color: #647580;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ultimo-trabajo strong {
+  font-size: 15px;
+}
+
+.ultima-fecha {
+  color: #52616b;
+  font-size: 14px;
+}
+
+article[data-sa="1"] {
+  border: 2px solid #d49a22;
+  border-top: 6px solid #d49a22;
+  background: #fffdf5;
+}
+
+.aviso-sa {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff0bc;
+  color: #704400;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.resultados {
+  color: #52616b;
+  font-size: 14px;
+}
+
 </style>
 <h1>Seguimiento histológico</h1>
 <p>Vista de consulta. Última publicación: FECHA</p>
 FORMULARIO
-<input id="buscar" placeholder="Buscar muestra" oninput="filtrar()">
-<select id="vista" onchange="filtrar()">
-<option value="false">Pendientes</option>
-<option value="true">Archivadas</option>
-<option value="todas">Todas</option>
-</select>
+<div class="filtros">
+  <label>
+    Buscar
+    <input id="buscar" placeholder="ID o texto" oninput="filtrar()">
+  </label>
+
+  <label>
+    Estado
+    <select id="vista" onchange="filtrar()">
+      <option value="false">Pendientes</option>
+      <option value="true">Archivadas</option>
+      <option value="todas">Todas</option>
+    </select>
+  </label>
+
+  <label>
+    Etapa
+    <select id="etapa" onchange="filtrar()">
+      <option value="todas">Todas las etapas</option>
+      OPCIONES_ETAPAS
+    </select>
+  </label>
+
+  <label>
+    Orden por avance
+    <select id="orden" onchange="filtrar()">
+      <option value="desc">Más avanzadas primero</option>
+      <option value="asc">Etapas iniciales primero</option>
+    </select>
+  </label>
+</div>
+
+<p class="resultados">
+  Las muestras pendientes de revisión SA aparecen primero
+  entre los resultados filtrados.
+</p>
+<p id="conteo" class="resultados" aria-live="polite"></p>
+
 <main class="tablero">
 TARJETAS
 </main>
 <script>
-function filtrar(){
- const q=document.getElementById('buscar').value.toLowerCase();
- const v=document.getElementById('vista').value;
- document.querySelectorAll('article').forEach(a=>{
-  a.hidden=!(a.textContent.toLowerCase().includes(q)
-    &&(v==='todas'||a.dataset.archivada===v));
- });
+function normalizar(texto) {
+  return texto.normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 }
+
+function filtrar() {
+  const consulta = normalizar(
+    document.getElementById("buscar").value.trim()
+  );
+  const vista = document.getElementById("vista").value;
+  const etapa = document.getElementById("etapa").value;
+  const direccion =
+    document.getElementById("orden").value === "asc" ? 1 : -1;
+
+  const tablero = document.querySelector(".tablero");
+  const tarjetas = Array.from(tablero.querySelectorAll("article"));
+
+  tarjetas.sort((a, b) => {
+    // SA siempre primero, independientemente del sentido del orden.
+    const diferenciaSA = Number(b.dataset.sa) - Number(a.dataset.sa);
+    if (diferenciaSA) return diferenciaSA;
+
+    const diferenciaEtapa =
+      Number(a.dataset.rango) - Number(b.dataset.rango);
+    if (diferenciaEtapa) return direccion * diferenciaEtapa;
+
+    // Dentro de la misma etapa, mantener la prioridad manual.
+    const diferenciaPrioridad =
+      Number(b.dataset.prioridad) - Number(a.dataset.prioridad);
+    if (diferenciaPrioridad) return diferenciaPrioridad;
+
+    return a.dataset.id.localeCompare(
+      b.dataset.id, "es", {numeric: true}
+    );
+  });
+
+  let visibles = 0;
+  let revisiones = 0;
+
+  tarjetas.forEach(tarjeta => {
+    const coincideTexto =
+      normalizar(tarjeta.textContent).includes(consulta);
+    const coincideEstado =
+      vista === "todas" || tarjeta.dataset.archivada === vista;
+    const coincideEtapa =
+      etapa === "todas" || tarjeta.dataset.etapa === etapa;
+
+    tarjeta.hidden = !(
+      coincideTexto && coincideEstado && coincideEtapa
+    );
+
+    if (!tarjeta.hidden) {
+      visibles++;
+      if (tarjeta.dataset.sa === "1") revisiones++;
+    }
+
+    tablero.appendChild(tarjeta);
+  });
+
+  document.getElementById("conteo").textContent =
+    visibles === 0
+      ? "No hay muestras que coincidan con estos filtros."
+      : `${visibles} muestras visibles · ${revisiones} requieren revisión SA`;
+}
+
 filtrar();
 </script></html>"""
 
 pagina = pagina.replace("FECHA", esc(ahora))
 pagina = pagina.replace("FORMULARIO", enlace)
+pagina = pagina.replace("OPCIONES_ETAPAS", opciones_etapas)
 pagina = pagina.replace("TARJETAS", "".join(tarjetas))
 (salida / "index.html").write_text(pagina, encoding="utf-8")
 (salida / ".nojekyll").touch()
