@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd -- "$(dirname -- "$(readlink -f -- "$0")")"
+
+# Evita incluir cambios que ya habías preparado para otro commit.
+if ! git diff --cached --quiet; then
+  echo "Hay cambios preparados para otro commit."
+  echo "Revísalos con: git diff --cached"
+  exit 1
+fi
+
+.env/bin/python publicar.py
+git add -- data/muestras.json docs/
+
+if ! git diff --cached --quiet; then
+  mensaje="${*:-Actualizar seguimiento histológico}"
+  git commit -m "$mensaje"
+else
+  echo "No hay nuevos cambios de seguimiento."
+fi
+
+git push
+echo "Enviado. GitHub Pages publicará la actualización."
