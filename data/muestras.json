@@ -680,11 +680,11 @@
     ]
   },
   "1082291": {
-    "pendiente": "reincluir",
+    "pendiente": "he_eval",
     "prioridad": false,
-    "desgaste_obligatorio": true,
+    "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
-    "placas": "No hay placas en laboratorio",
+    "placas": "Hay placas en laboratorio",
     "nota": "",
     "historial": [
       {
@@ -695,15 +695,33 @@
         "accion": "Plan inicial importado",
         "fecha": null,
         "detalle": "reincluir"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:29:12.098068-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:31:07.029802-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cortar HE de evaluación",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:31:07.874841-03:00",
+        "detalle": ""
       }
     ]
   },
   "082104": {
-    "pendiente": "desgaste",
+    "pendiente": "he_eval",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
-    "placas": "No hay placas en laboratorio",
+    "placas": "Hay placas en laboratorio",
     "nota": "",
     "historial": [
       {
@@ -720,15 +738,27 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T11:55:01.482758-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:29:44.138425-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cortar HE de evaluación",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:30:47.641887-03:00",
+        "detalle": ""
       }
     ]
   },
   "1082314": {
-    "pendiente": "desgaste",
+    "pendiente": "he_eval",
     "prioridad": true,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
-    "placas": "No hay placas en laboratorio",
+    "placas": "Hay placas en laboratorio",
     "nota": "",
     "historial": [
       {
@@ -745,11 +775,23 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T11:55:24.052462-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:29:39.791661-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cortar HE de evaluación",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:30:53.116689-03:00",
+        "detalle": ""
       }
     ]
   },
   "721093": {
-    "pendiente": "desgaste",
+    "pendiente": "elegir",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -770,11 +812,29 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T11:55:19.611158-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:31:18.683564-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cambio de plan",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:31:48.198610-03:00",
+        "detalle": "corte_eval → reincluir. Salía solo un defecto a pesar de intentar enderezar"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:31:54.570365-03:00",
+        "detalle": ""
       }
     ]
   },
   "1082113": {
-    "pendiente": "desgaste",
+    "pendiente": "elegir",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -795,15 +855,33 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T11:55:31.309728-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:29:55.217407-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cambio de plan",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:32:10.827521-03:00",
+        "detalle": "corte_eval → reincluir. Salía solo un defecto a pesar de intentar enderezar"
+      },
+      {
+        "accion": "Reincluir",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:32:13.943935-03:00",
+        "detalle": ""
       }
     ]
   },
   "1082101": {
-    "pendiente": "desgaste",
+    "pendiente": "he_eval",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
-    "placas": "No hay placas en laboratorio",
+    "placas": "Hay placas en laboratorio",
     "nota": "",
     "historial": [
       {
@@ -819,6 +897,18 @@
         "accion": "Reincluir",
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T11:55:37.349272-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:29:47.347188-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cortar HE de evaluación",
+        "fecha": "2026-10-01",
+        "registrado": "2026-10-01T15:31:02.305294-03:00",
         "detalle": ""
       }
     ]
