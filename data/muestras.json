@@ -680,7 +680,7 @@
     ]
   },
   "1082291": {
-    "pendiente": "he_eval",
+    "pendiente": "corte_corazon",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -713,11 +713,23 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T15:31:07.874841-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Teñir HE de evaluación",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:55:42.611159-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Esperar revisión SA",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:55:43.832499-03:00",
+        "detalle": "Set estándar"
       }
     ]
   },
   "082104": {
-    "pendiente": "he_eval",
+    "pendiente": "he_estandar",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -750,11 +762,29 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T15:30:47.641887-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Teñir HE de evaluación",
+        "fecha": "2026-10-05",
+        "registrado": "2026-10-05T10:53:35.378845-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Esperar revisión SA",
+        "fecha": "2026-10-05",
+        "registrado": "2026-10-05T10:53:37.020074-03:00",
+        "detalle": "Set estándar"
+      },
+      {
+        "accion": "Cortar set estándar",
+        "fecha": "2026-10-05",
+        "registrado": "2026-10-05T10:53:38.854731-03:00",
+        "detalle": ""
       }
     ]
   },
   "1082314": {
-    "pendiente": "he_eval",
+    "pendiente": "corte_corazon",
     "prioridad": true,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -787,15 +817,27 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T15:30:53.116689-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Teñir HE de evaluación",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:55:03.979450-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Esperar revisión SA",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:55:04.666249-03:00",
+        "detalle": "Set estándar"
       }
     ]
   },
   "721093": {
-    "pendiente": "elegir",
+    "pendiente": "corte_corazon",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
-    "placas": "No hay placas en laboratorio",
+    "placas": "Hay placas en laboratorio",
     "nota": "",
     "historial": [
       {
@@ -830,15 +872,39 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T15:31:54.570365-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-05",
+        "registrado": "2026-10-05T10:53:56.111157-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cortar HE de evaluación",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:54:01.258370-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Teñir HE de evaluación",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:54:02.299157-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Esperar revisión SA",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:54:25.243882-03:00",
+        "detalle": "Set corazón"
       }
     ]
   },
   "1082113": {
-    "pendiente": "elegir",
+    "pendiente": "corte_corazon",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
-    "placas": "No hay placas en laboratorio",
+    "placas": "Hay placas en laboratorio",
     "nota": "",
     "historial": [
       {
@@ -873,11 +939,35 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T15:32:13.943935-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Desgastar",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:54:41.923714-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Cortar HE de evaluación",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:54:42.980148-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Teñir HE de evaluación",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:54:44.170807-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Esperar revisión SA",
+        "fecha": "2026-10-02",
+        "registrado": "2026-10-05T10:54:49.336748-03:00",
+        "detalle": "Set corazón"
       }
     ]
   },
   "1082101": {
-    "pendiente": "he_eval",
+    "pendiente": "corte_estandar",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -910,6 +1000,18 @@
         "fecha": "2026-10-01",
         "registrado": "2026-10-01T15:31:02.305294-03:00",
         "detalle": ""
+      },
+      {
+        "accion": "Teñir HE de evaluación",
+        "fecha": "2026-10-05",
+        "registrado": "2026-10-05T10:49:23.459672-03:00",
+        "detalle": ""
+      },
+      {
+        "accion": "Esperar revisión SA",
+        "fecha": "2026-10-05",
+        "registrado": "2026-10-05T10:53:15.693239-03:00",
+        "detalle": "Set estándar"
       }
     ]
   }
