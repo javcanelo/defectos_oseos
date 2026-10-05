@@ -1,21 +1,21 @@
 Muestra,Pendiente,Bloque,Placas,Prioridad,Observación,Publicado
-ID 1082314,Cortar set corazón,En laboratorio,Hay placas en laboratorio,True,,2026-10-05T10:56-03:00
-ID 082104,"Teñir HE estándar: 1, 8, 15",En laboratorio,Hay placas en laboratorio,False,,2026-10-05T10:56-03:00
-ID 1062219,Cortar set estrella,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 1082,Cortar set estrella,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 1082101,Cortar set estándar,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T10:56-03:00
-ID 1082113,Cortar set corazón,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T10:56-03:00
-ID 1082288,Archivada,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 1082291,Cortar set corazón,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T10:56-03:00
-ID 1082292,Cortar set estrella,En laboratorio,Sin confirmar,False,Bloque casi agotado. Corte estrella indicado; fecha de esa indicación no confirmada.,2026-10-05T10:56-03:00
-ID 1082297,Cortar set estándar,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 1082301,Cortar set estrella,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 1082?3801,Cortar set estrella,En laboratorio,Sin confirmar,False,Confirmar identificador.,2026-10-05T10:56-03:00
-ID 10880,Desgastar,En laboratorio,Sin confirmar,False,Indicación SA: desgaste de 200 µm.,2026-10-05T10:56-03:00
-ID 182281,"Teñir HE corazón: 5, 21, 39",En laboratorio,Sin confirmar,False,Pendiente HE corazón. El corte corazón previo no está documentado explícitamente.,2026-10-05T10:56-03:00
-ID 217,Desgastar,En laboratorio,Sin confirmar,False,Indicación SA: desgaste de 200 µm.,2026-10-05T10:56-03:00
-ID 22,Cortar set corazón,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 4874,Cortar set estándar,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 721093,Cortar set corazón,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T10:56-03:00
-ID 82293,Cortar set estándar,En laboratorio,Sin confirmar,False,,2026-10-05T10:56-03:00
-ID 909700,Desgastar,En laboratorio,Sin confirmar,False,Indicación SA: desgaste de 200 µm.,2026-10-05T10:56-03:00
+ID 1082314,Cortar set corazón,En laboratorio,Hay placas en laboratorio,True,,2026-10-05T11:00-03:00
+ID 082104,Cortar set estándar,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T11:00-03:00
+ID 1062219,Cortar set estrella,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 1082,Cortar set estrella,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 1082101,Cortar set estándar,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T11:00-03:00
+ID 1082113,Cortar set corazón,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T11:00-03:00
+ID 1082288,Archivada,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 1082291,Cortar set corazón,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T11:00-03:00
+ID 1082292,Cortar set estrella,En laboratorio,Sin confirmar,False,Bloque casi agotado. Corte estrella indicado; fecha de esa indicación no confirmada.,2026-10-05T11:00-03:00
+ID 1082297,Cortar set estándar,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 1082301,Cortar set estrella,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 1082?3801,Cortar set estrella,En laboratorio,Sin confirmar,False,Confirmar identificador.,2026-10-05T11:00-03:00
+ID 10880,Desgastar,En laboratorio,Sin confirmar,False,Indicación SA: desgaste de 200 µm.,2026-10-05T11:00-03:00
+ID 182281,"Teñir HE corazón: 5, 21, 39",En laboratorio,Sin confirmar,False,Pendiente HE corazón. El corte corazón previo no está documentado explícitamente.,2026-10-05T11:00-03:00
+ID 217,Desgastar,En laboratorio,Sin confirmar,False,Indicación SA: desgaste de 200 µm.,2026-10-05T11:00-03:00
+ID 22,Cortar set corazón,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 4874,Cortar set estándar,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 721093,Cortar set corazón,En laboratorio,Hay placas en laboratorio,False,,2026-10-05T11:00-03:00
+ID 82293,Cortar set estándar,En laboratorio,Sin confirmar,False,,2026-10-05T11:00-03:00
+ID 909700,Desgastar,En laboratorio,Sin confirmar,False,Indicación SA: desgaste de 200 µm.,2026-10-05T11:00-03:00

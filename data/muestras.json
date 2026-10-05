@@ -729,7 +729,7 @@
     ]
   },
   "082104": {
-    "pendiente": "he_estandar",
+    "pendiente": "corte_estandar",
     "prioridad": false,
     "desgaste_obligatorio": false,
     "bloque": "En laboratorio",
@@ -774,12 +774,6 @@
         "fecha": "2026-10-05",
         "registrado": "2026-10-05T10:53:37.020074-03:00",
         "detalle": "Set estándar"
-      },
-      {
-        "accion": "Cortar set estándar",
-        "fecha": "2026-10-05",
-        "registrado": "2026-10-05T10:53:38.854731-03:00",
-        "detalle": ""
       }
     ]
   },
